@@ -1,0 +1,155 @@
+.juu.box{
+	background-image: url("img/negroTransparente.png");
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index: 1000;
+	display: none;
+}
+.juu.dialog.container{
+	padding: 0;
+	display: block;
+	background-color: #EEEEEE;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px #222;
+    overflow: hidden;
+    position: relative;
+}
+.juu.dialog.titlebar{
+	width: 100%;
+ 	height: 15px;
+ 	background: url("img/titleBar.png");
+ 	background-size: 80px 15px;
+ 	background-repeat: no-repeat;
+	background-position:center; 
+}
+.juu.dialog.titlebar>span{
+	background: url("img/closeIcon.png");
+	background-repeat: no-repeat;
+	float: right;
+	margin-right: 5px;
+	margin-top: 5px;
+	height: 21px;
+	width: 21px;
+}
+.juu.dialog.titlebar>span:hover{
+	cursor: pointer;
+	background: url("img/closeIconS.png");
+	background-repeat: no-repeat;
+}
+.juu.dialog.content{
+	padding: 5px;
+	width: 100%;
+	height: 90%;
+	overflow: auto;
+}
+@media only screen and (max-width : 950px){
+	.juu.dialog.container{
+		width: 95%;
+		height: 95%;
+		margin: 2.5%;
+	}
+}
+@media only screen and (min-width : 951px){
+	.juu.dialog.container{
+		width: 800px;
+		height: 400px;
+		margin-left: -400px;
+		margin-top: -200px;
+		position: relative;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+.juu.alert{
+	width: 200px;
+	height: 160px;
+	margin-left: -100px;
+	margin-top: -80px;
+	padding: 5px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	background-color: #EEEEEE;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 3px 3px 2px #222;
+}
+
+#aside>div:nth-child(1){
+	overflow: hidden;
+	padding: 10px;
+	width: auto;
+	height: auto;
+}
+
+.juu.tab{
+	position: relative;
+}
+.juu.tab.list{
+	height: 28px;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	width: 100%;
+	background: #f2f2f2;
+	cursor:pointer;
+}
+.juu.tab.title{
+	top: 0;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border-color: #ccc;
+	background-image: none;
+	line-height: normal;
+	margin-right: 4px;
+	padding: 2px 8px 2px 9px;
+	border-top: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	display: inline-block;
+}
+.juu.tab.title.select{
+	background-color: #87d10a;
+}
+.juu.tab.content{
+	padding: 2px;
+	padding-left: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 4px;
+	top: 21px;
+}
+.juu.tab.item.select{
+	display: block;
+}
+.juu.tab.item{
+	padding-bottom: 1em;
+	display: none;
+}
+
+#flotanteInfo{
+	cursor: pointer;
+	height: auto;
+	position: absolute;
+	background: #fff;
+	bottom: 4px;
+	right: 3px;
+	z-index: 1000;
+	border: solid 1px;
+	padding: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	background-image: url("img/closeIcon.png");
+	background-repeat: no-repeat;
+	background-position: top right 7px;
+}
+#flotanteInfo:hover{
+	background-image: url("img/closeIconS.png");
+}

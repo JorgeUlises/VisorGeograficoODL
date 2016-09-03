@@ -1,0 +1,62 @@
+var config = {
+	printService: "http://200.32.81.75/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task",
+}
+
+var confData =  [   
+	{   
+        "name":"Localidad",
+        "layerId":"0",
+        "url":"http://services1.arcgis.com/e07e66fYTmhQ5sFB/arcgis/rest/services/Modulo_Infraestructura/FeatureServer/0"
+    },
+    {
+    	"name":"gpintersectar",
+    	"layerId":"-1",
+    	"url":"http://50.62.42.205/geothinking/rest/services/ODL/ODL_CV/GPServer/Model"
+    },
+    {
+    	"name":"geometry",
+    	"layerId":"-1",
+    	"url":"http://50.62.42.205/geothinking/rest/services/Utilities/Geometry/GeometryServer"
+    },
+    {
+    	"name":"Predio",
+        "layerId":"20",
+        "url":"http://50.62.42.205/geothinking/rest/services/inmobiliaria/MapServer/20"
+    },
+    {
+    	"name":"CoberturaCampo",
+    	"layerId":"17",
+    	"url":"http://50.62.42.205/geothinking/rest/services/inmobiliaria/MapServer/17"
+    },
+    {   
+        "name":"Punto",
+        "layerId":"1",
+        "url":"http://services1.arcgis.com/e07e66fYTmhQ5sFB/arcgis/rest/services/Modulo_Infraestructura/FeatureServer/1"
+    },
+    {   
+        "name":"Planta",
+        "layerId":"2",
+        "url":"http://services1.arcgis.com/e07e66fYTmhQ5sFB/ArcGIS/rest/services/Modulo_Infraestructura/FeatureServer/2"
+    },
+    {   
+        "name":"Planta_Transformador",
+        "layerId":"2",
+        "url":"http://services1.arcgis.com/e07e66fYTmhQ5sFB/ArcGIS/rest/services/Modulo_Infraestructura/FeatureServer/3"
+    },
+    {   
+        "name":"Planta_Medidor",
+        "layerId":"2",
+        "url":"http://services1.arcgis.com/e07e66fYTmhQ5sFB/ArcGIS/rest/services/Modulo_Infraestructura/FeatureServer/4"
+    },
+    {   
+        "name":"Transformador",
+        "layerId":"2",
+        "url":"http://services1.arcgis.com/e07e66fYTmhQ5sFB/ArcGIS/rest/services/Modulo_Infraestructura/FeatureServer/5"
+    },
+    {   
+        "name":"Medidor",
+        "layerId":"2",
+        "url":"http://services1.arcgis.com/e07e66fYTmhQ5sFB/ArcGIS/rest/services/Modulo_Infraestructura/FeatureServer/6"
+    }
+    
+];

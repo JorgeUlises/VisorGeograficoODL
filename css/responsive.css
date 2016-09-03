@@ -1,0 +1,27 @@
+/*iPhone, many Android, many Blackberry, Potrait*/
+@media only screen and (max-width : 320px) {
+	header,#aside{display:none;}
+	#logo2{display:block;}
+}
+/*Mobile Landscape*/
+@media only screen and (min-width : 321px) and (max-width : 720px) {
+	header{display:block;}
+	#aside{display:none;}
+}
+/*Tablet*/
+@media only screen and (min-width : 721px) and (max-width : 1024px) {
+	header{display:block;}
+	#aside{display:none;}
+}
+/*Hasta modo tablet*/
+@media only screen and (max-width: 1024px){
+	#toolbar{float: none;}
+	#logo{display: none;}
+}
+/*PC, Laptop*/
+@media only screen and (min-width: 1025px){
+	header,#aside{display:block;}
+	#toolbar{float:right;}
+	header{background-image: none;}
+}
+

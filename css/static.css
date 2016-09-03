@@ -1,0 +1,272 @@
+html{
+	font: 400 normal normal 80%/normal 'Lucida Grande','Lucida Sans Unicode',Helvetica,Arial,Verdana,sans-serif;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #FFFFFF;
+	background-image: url("img/cargando.gif");
+	background-repeat: no-repeat;
+	background-size: 170px 40px;
+	background-attachment:fixed;
+	background-position:center; 
+	overflow: hidden;
+}
+#mainWindow {
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+#mainWindow,header,nav,#toolbar{
+	padding: 0;
+	margin: 0;
+}
+header{
+	width: 100%;
+	height: 44px;
+	background-color: #FFFFFF;
+	background-image: url("img/odl_logo.png");
+	background-position: left top;
+	background-size: 130px 44px;
+	background-repeat: no-repeat;
+}
+header>span{
+	float: right;
+	margin-top: 9px;
+	margin-right: 10px;
+	color: #6e9d40;
+	font-size: 1.5em;
+	vertical-align: middle;
+	text-shadow: 0.05em 0.1em 0.05em #000000;
+}
+nav{
+	width: 100%;
+	height: 50px;
+	background-color: #FFFFFF;
+	overflow-x: auto; 
+	overflow-y: hidden;
+	border: solid #6e9d40;
+	border-width: 0 0 8px 0;
+}
+#toolbar{
+	width: 480px;
+	height: 46px;
+	overflow: hidden;
+}
+.botonToolbar{
+	background: #87d10a;
+	/*background: #950006;
+    background: -moz-linear-gradient(top, #de0009 0%, #950006 100%);
+    background: -o-linear-gradient(top, #de0009 0%, #950006 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #de0009), color-stop(100%, #950006));
+    background: -webkit-linear-gradient(top, #de0009 0%, #950006 100%);
+    background: linear-gradient(top, #de0009 0%, #950006 100%);*/
+    border: solid #c5eb84;
+    /*border: solid #dd0009;*/
+    border-width: 1px 1px 1px 1px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    margin-left: 0;
+    margin-right: 2px;
+    padding: 0;
+    text-decoration: none;
+}
+.botonToolbar:hover{
+	border-color: #b50007;
+    background: #7e0004;
+    background: -moz-linear-gradient(-45deg, #b50007 0%, #7e0004 100%);
+    background: -o-linear-gradient(-45deg, #b50007 0%, #7e0004 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #b50007), color-stop(100%, #7e0004));
+    background: -webkit-linear-gradient(-45deg, #b50007 0%, #7e0004 100%);
+    background: linear-gradient(-45deg, #b50007 0%, #7e0004 100%);
+}
+.botonToolbar>span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+.botonToolbar.buscar>span{
+	background-image: url("img/search.png");
+}
+.botonToolbar.mapabase>span{
+	background-image: url("img/basemap.png");
+}
+.botonToolbar.imprimir>span{
+	background-image: url("img/print.png");
+}
+.botonToolbar.leyenda>span{
+	background-image: url("img/legend.png");
+}
+.botonToolbar.medir>span{
+	background-image: url("img/measure.png");
+}
+.botonToolbar.configuracion>span{
+	background-image: url("img/settings.png");
+}
+.botonToolbar.marcadores>span{
+	background-image: url("img/bookmarks.png");
+}
+.botonToolbar.acercade>span{
+	background-image: url("img/about.png");
+}
+.botonToolbar.navegacion>span{
+	background-image: url("img/navigation.png");
+}
+.botonToolbar.reportes>span{
+	background-image: url("img/report.png");
+}
+.botonToolbar.estadisticas>span{
+	background-image: url("img/statistics.png");
+}
+.botonToolbar.acercar>span{
+	background-image: url("img/zoomin.png");
+}
+.botonToolbar.alejar>span{
+	background-image: url("img/zoomout.png");
+}
+.botonToolbar.extensiontotal>span{
+	background-image: url("img/zoomfull.png");
+}
+.botonToolbar.vistaanterior>span{
+	background-image: url("img/zoomprevious.png");
+}
+.botonToolbar.vistaposterior>span{
+	background-image: url("img/zoomnext.png");
+}
+.botonToolbar.desplazar>span{
+	background-image: url("img/navpan.png");
+}
+.botonToolbar.detenernav>span{
+	background-image: url("img/navdecline.png");
+}
+.botonToolbar.agregarmarcador>span{
+	background-image: url("img/addBookmark.png");
+}
+.botonToolbar.eliminarmarcador>span{
+	background-image: url("img/removeBookmark.png");
+}
+.botonToolbar.punto>span{
+	background-image: url("img/point.png");
+}
+.botonToolbar.linea>span{
+	background-image: url("img/line.png");
+}
+.botonToolbar.poligono>span{
+	background-image: url("img/polygon.png");
+}
+.botonToolbar.pk>span{
+	background-image: url("img/pk.png");
+}
+
+
+#mainCenter{
+	display:block;
+}
+#main,#aside{
+	float: left;
+}
+#mainCenter,#main,#aside{
+	padding: 0;
+	margin: 0;
+}
+#main{
+	background-color: #4a494a;
+}
+#aside{
+	word-wrap: break-word;
+	background-color: #EEEEEE;
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+	-webkit-box-shadow:inset 5px -2px 0px 1px #6e9d40;
+    -moz-box-shadow:inset 5px -2px 0px 1px #6e9d40;
+    box-shadow:inset 5px -2px 0px 1px #6e9d40;
+	/*
+	box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border-left: 2px solid #6e9d40;
+    */
+	/*
+	-moz-box-shadow:inset 5px 0px 15px #FFFFFF;
+	-webkit-box-shadow:inset 5px 0px 15px #FFFFFF;
+	box-shadow:inset 5px 0px 15px #FFFFFF;*/
+}
+#map{
+	height:100%;
+	width: 100%;
+	padding:0;
+    margin:0;
+}
+#logo{
+	display: block;
+	background-image: url("img/odl_logo_big.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 80px;
+	width: 210px;
+	padding: 0;
+	margin: 0;
+}
+#logo2{
+	display: none;
+	background-image: url("img/odl_logo.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 60px;
+	right: 5px;
+	height: 22px;
+	width: 60px;
+	padding: 0;
+	margin: 0;
+	z-index: 100;
+}
+.widgetContainer{
+	padding: 8px;
+}
+.toolsBookmarks{
+	border-bottom: 1px solid #000000;
+}
+.search_btn{
+	cursor:pointer;
+	background-image:url("img/search_icon.png");
+	background-size:100% 100%;
+	background-color: #333;
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	margin-bottom: -6px;
+}
+#resultadosAtributo li, #bookmarkList span, #resultadosGeometria li{
+	cursor:pointer;
+}
+.divOculto>div{
+	display: none;
+}
+/*otros estilos*/
+#gmaps_controls_{/*para quitar el hombre flotante*/
+	display: none;
+}
+#basemapDiv{
+	/*zoom: 0.7;*/
+}
+.esriControlsBR{
+	display: none;
+}
+
+.titlePane{
+	background-color: #6e9d40 !important;
+}

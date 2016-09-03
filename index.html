@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>ODL - Oleoducto de los Llanos Orientales</title>
+	<meta name="description" content="" />
+	<meta name="author" content="Jorge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="shortcut icon" href="css/img/favicon.ico" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="stylesheet" href="css/static.css" />
+	<link rel="stylesheet" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/juu.css" />
+	<link rel="stylesheet" href="css/claro.css" />
+	<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.0/js/dojo/dijit/themes/tundra/tundra.css" />
+	<link rel="stylesheet" type="text/css" href="//serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css" />
+</head>
+
+<body class="claro.css">
+<div id="mainWindow">
+  <header>
+    <!-- header content goes in here -->
+    <span>Sistema de Información ODL</span>
+    <span id="logo"></span>
+  </header>
+
+  <nav>
+    <!-- navigation menu goes in here -->
+    <div id="toolbar">
+    	<div class="botonToolbar mapabase" title="Mapa Base" onclick='juu.dialog.change("dialogo1");'><span></span></div>
+    	<div class="botonToolbar medir" title="Medir" onclick='juu.dialog.change("dialogo2");'><span></span></div>
+    	<div class="botonToolbar buscar" title="Buscar" onclick='juu.dialog.change("dialogo3");'><span></span></div>
+    	<div id="imprimir" class="botonToolbar imprimir" title="Imprimir"><span></span></div>
+    	<div class="botonToolbar leyenda" title="Leyenda" onclick='juu.dialog.change("dialogo4");'><span></span></div>
+    	<div class="botonToolbar navegacion" title="Navegación" onclick='juu.dialog.change("dialogo5");'><span></span></div>
+    	<div class="botonToolbar marcadores" title="Marcadores de Posición" onclick='juu.dialog.change("dialogo6");bookmark.cargar();'><span></span></div>
+    	<div class="botonToolbar reportes" title="Reportes" onclick='juu.dialog.change("dialogo7");'><span></span></div>
+    	<div class="botonToolbar estadisticas" title="Estadísticas" onclick='juu.dialog.change("dialogo8");'><span></span></div>
+    	<div class="botonToolbar acercade" title="Acerca de la Aplicación" onclick='juu.dialog.change("aboutDialog");'><span></span></div>
+    	<!--
+    	<div class="botonToolbar"><span></span></div>-->
+    </div>
+  </nav>
+
+  <section id="mainCenter">
+	  <section id="main">
+	    <!-- main page content goes in here -->
+	    <div id="map">
+	    	<span id="logo2"></span>
+	    </div>
+	  </section>
+	
+	  <section id="aside">
+	    <!-- aside content goes in here -->
+	  </section>
+  </section>
+  <footer>
+    <!-- footer content goes in here -->
+    <section id="dialogo1" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content">
+	       	<div id="basemapDiv"></div>   	
+	       </div>
+	    </div>
+	</section>
+	<section id="dialogo2" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	<div id="measurementDiv"></div>
+	       </div>
+	    </div>
+	</section>
+	<section id="dialogo3" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	<div id="searchDiv"></div>
+	       </div>
+	    </div>
+	</section>
+	<section id="dialogo4" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	<div id="tocDiv"></div>   	
+	       </div>
+	    </div>
+	</section>
+	<section id="dialogo5" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	<div class="widgetContainer">
+		       	<div class="botonToolbar acercar" title="Acercar" onclick='navtoolbar.activate(esri.toolbars.Navigation.ZOOM_IN);'><span></span></div>
+		       	<div class="botonToolbar alejar" title="Alejar" onclick='navtoolbar.activate(esri.toolbars.Navigation.ZOOM_OUT);'><span></span></div>
+		       	<div class="botonToolbar extensiontotal" title="Extensión Total" onclick='navtoolbar.zoomToFullExtent();'><span></span></div>
+		       	<div class="botonToolbar vistaanterior" title="Vista Anterior" onclick='navtoolbar.zoomToPrevExtent();'><span></span></div>
+		       	<div class="botonToolbar vistaposterior" title="Vista Posterior" onclick='navtoolbar.zoomToNextExtent();'><span></span></div>
+		       	<div class="botonToolbar desplazar" title="Desplazar" onclick='navtoolbar.activate(esri.toolbars.Navigation.PAN);'><span></span></div>
+		       	<div class="botonToolbar detenernav" title="Detener Navegación" onclick='navtoolbar.deactivate();'><span></span></div>
+	       	</div>
+	       </div>
+	    </div>
+	</section>
+	<section id="dialogo6" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	 <div class="widgetContainer">
+	       	 	<div class="toolsBookmarks">
+	       	 		<div class="botonToolbar agregarmarcador" title="Agregar Marcador" onclick='bookmark.add();'><span></span></div>
+	       	 		<div class="botonToolbar eliminarmarcador" title="Eliminar Marcador" onclick='bookmark.remove();'><span></span></div>
+	       	 	</div>
+	       	 	<br />
+	       	 	<input id="textoMarcador" placeholder="Nombre del Marcador" type="text" />
+	       	 	<div id="bookmarkList">
+	       	 	</div>
+	       	 </div>
+	       </div>
+	    </div>
+	</section>
+    <section id="dialogo7" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	<div>Consulta Inmobiliaria</div><br />
+	       	<div class="juu tab widgetContainer">
+	       		<div class="juu tab list">
+	       			<div class="juu tab title select">Atributos</div>
+	       			<div class="juu tab title">Espacial</div>
+	       		</div>
+	       		<div class="juu tab content">
+	       			<div id="flotanteInfo" style="display: none;" onclick="changeFlotanteLeftPane(0);"></div>
+	       			<div class="juu tab item select">
+	       				<strong>Seleccione el Atributo</strong><br />
+	       				<select style="width:200px;" type="text" id="nombreAtributo" name="nombre" onchange="consultarTabla();">
+							<option value="Nombre" selected="">Nombre</option>
+							<option value="CSIT">Código del predio</option>
+							<option value="MatriculaInmobiliaria">Matrícula inmobiliaria</option>
+							<option value="Propietario">Propietario</option>
+						</select>
+						<br /><br />
+						<strong>Ingrese el Valor</strong><br />
+						<input style="width:170px;" id="valorAtributo" type="text" onkeypress="buscarPorAtributo(event)" />
+						<div onclick="buscarPorAtributo({keyCode:13})" class="search_btn"></div>
+						<br /><br />
+						<strong>Resultados</strong><br />
+						<div id="resultadosAtributo"></div>
+	       			</div>
+	       			<div class="juu tab item">
+	       				<strong>¿Qué tipo de consulta desea hacer?</strong>
+	       				<br />
+	       				<div class="botonToolbar punto" title="Punto" onclick="consultarPorFigura('punto');"><span></span></div>
+	       				<div class="botonToolbar linea" title="Línea" onclick="consultarPorFigura('linea');"><span></span></div>
+	       				<div class="botonToolbar poligono" title="Polígono" onclick="consultarPorFigura('poligono');"><span></span></div>
+	       				<div class="botonToolbar pk" title="PK" onclick="consultarPorPK();"><span></span></div>
+	       				<br />
+	       				<div class="divOculto">
+		       				<div id="contenedorFigura">
+		       					<strong>Buffer: </strong><input id="bufferde" type="text" value=0 /> Metros
+		       					<!--<div onclick="buscarPorGeometria" class="search_btn"></div>-->
+		       					<br /><br />
+								<strong>Resultados</strong><br />
+								<div id="resultadosGeometria"></div>
+		       				</div>
+		       				<div id="contenedorPK">
+		       					<strong>PK (km): </strong><input type="text" /><br/> 
+		       					<strong>Buffer: </strong><input type="text" />
+		       					<div onclick="alert()" class="search_btn"></div>
+		       				</div>
+	       				</div>
+	       			</div>
+	       		</div>
+	       	</div>
+	       </div>
+	    </div>
+	</section>
+	<section id="dialogo8" class="juu box">
+		<!-- sidebar content goes in here -->
+	     <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	<div>Seleccione el predio sobre el cual desea consultar</div><br />
+	       	<div class="juu tab widgetContainer">
+	       		<div class="juu tab list">
+	       			<div class="juu tab title">Atributos</div>
+	       			<div class="juu tab title select">Espacial</div>
+	       		</div>
+	       		<div class="juu tab content">
+	       			<div id="flotanteInfo" style="display: none;" onclick="changeFlotanteLeftPane(0);"></div>
+	       			<div class="juu tab item">
+	       				<strong>Seleccione el Atributo</strong><br />
+	       				<select style="width:200px;" type="text" id="nombreAtributo" name="nombre" onchange="consultarTabla();">
+							<option value="Nombre" selected="">Nombre</option>
+							<option value="CSIT">Código del predio</option>
+							<option value="MatriculaInmobiliaria">Matrícula inmobiliaria</option>
+							<option value="Propietario">Propietario</option>
+						</select>
+						<br /><br />
+						<strong>Ingrese el Valor</strong><br />
+						<input style="width:170px;" id="valorAtributo" type="text" onkeypress="buscarPorAtributo(event)" />
+						<div onclick="buscarPorAtributo({keyCode:13})" class="search_btn"></div>
+						<br />
+						
+	       			</div>
+	       			<div id="itemEspacialConsultasCobertura" class="juu tab item select">
+	       				<strong>¿Qué tipo de consulta desea hacer?</strong>
+	       				<br />
+	       				<div class="botonToolbar punto" title="Punto" onclick="selectByGeometry('punto');"><span></span></div>
+	       				<div class="botonToolbar linea" title="Línea" onclick="selectByGeometry('linea');"><span></span></div>
+	       				<div class="botonToolbar poligono" title="Polígono" onclick="selectByGeometry('poligono');"><span></span></div>
+	       				
+	       			</div>
+	       		</div>
+	       	</div>
+	       	<br />
+	       	<div>
+	       		<button onclick="ConsultaCoberturaVegetal();">Consulta Cobertura Vegetal</button><br/>
+	       		<button>Consulta Forestal</button><br/>
+	       		<button>Consulta Geotecnia</button><br />
+	       	</div>
+	       	<strong>Resultados</strong><br />
+			<div id="resultadosAtributo"></div>	
+			<div id="chartnode" style="width: 300px; height: 300px"></div>
+	       </div>
+	    </div>
+	</section>
+	<section id="dialogo9" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	
+	       </div>
+	    </div>
+	</section>
+	<section id="aboutDialog" class="juu box">
+	    <!-- sidebar content goes in here -->
+	    <div class="juu dialog container">
+	       <div class="juu dialog titlebar"><span></span></div>
+	       <div class="juu dialog content"> 
+	       	Desarrollada por Geo-Thinking S.A.S   	
+	       </div>
+	    </div>
+	</section>
+  </footer>
+</div>
+	<script src="js/config.js"></script>
+	<script>
+    var djConfig = {
+      parseOnLoad: true,
+      packages: [{
+        "name": "agsjs",
+        "location" : 'http://gmaps-utility-gis.googlecode.com/svn/tags/agsjs/2.04/xbuild/agsjs'
+        //"location": 'http://gmaps-utility-gis.googlecode.com/svn/tags/agsjs/2.02/xbuild/agsjs' // for xdomain load
+		//"location": "http://gmaps-utility-gis.googlecode.com/svn/tags/agsjs/latest/build/agsjs"
+		//"location": "http://gmaps-utility-gis.googlecode.com/svn/trunk/agsjs/build/agsjs"
+        //"location": location.pathname.replace(/\/[^/]+$/, '') + 'js/agsjs/build/agsjs' 
+      },
+      {
+      	"name":"agsjstoc",
+      	"location": "http://gmaps-utility-gis.googlecode.com/svn/trunk/agsjs/build/agsjs"
+      	//"location": location.pathname.replace(/\/[^/]+$/, '') + 'js/agsjs/build/toc-toc'      	
+      }]
+    };
+	</script>
+	<script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.5compact"></script>
+	 <!--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"></script>-->
+	<script src="js/main.js"></script>
+	<script src="js/juu.js"></script>
+	<script src="js/script_1.js"></script>
+</body>
+</html>
